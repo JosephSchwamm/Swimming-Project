@@ -22,10 +22,9 @@ public class RaceDriver
 				}
 			Scanner userInput = new Scanner(System.in);
 			int whichSwimmer = userInput.nextInt();	
-			System.out.println("You picked " + whichSwimmer);
+			System.out.println("You picked " + TeamArray.team.get(whichSwimmer-1).getName());
 			
-			
-			System.out.println("These are all of " + "'s events. Please choose the number of the event you would like him to swim.");
+			System.out.println("These are all of " + TeamArray.team.get(whichSwimmer-1).getName() + "'s events. \nPlease choose the number of the event you would like him to swim.");
 		}
 
 	}
