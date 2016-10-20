@@ -13,7 +13,7 @@ public class RaceDriver
 		public static void pickYourSwimmer()
 		{
 			System.out.println("Welcome User to the underground world of swim betting. "
-					+ "\nPlease select one of the following swimmers whom you will be placing your bets on.");
+					+ "\nPlease select the number preceeding the following swimmer whom you will be placing your bets on.");
 			
 			for (int i = 0; i < TeamArray.team.size(); i++)
 				{
@@ -21,10 +21,8 @@ public class RaceDriver
 					
 				}
 			Scanner userInput = new Scanner(System.in);
-			String s = userInput.nextLine();
-			System.out.println("Please choose the number of the swimmer that you would like to bet on.");
-			 = userInput.nextInt();
-			
+			int whichSwimmer = userInput.nextInt();	
+			System.out.println("You picked" + whichSwimmer);
 		}
 
 	}
