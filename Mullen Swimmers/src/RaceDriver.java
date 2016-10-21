@@ -60,7 +60,7 @@ public class RaceDriver
 		
 		public static void showSwimmersInTheEvent()
 		{
-			System.out.println("These are the other swimmers who swim the " + finalEvent + ".");
+			System.out.println("These is what the competition will look like for the " + finalEvent + ".");
 			for (Swimmer s : TeamArray.team)
 				{
 					if (s.getEvent1().equals(finalEvent))
@@ -89,7 +89,7 @@ public class RaceDriver
 		
 		
 		
-		
+		public static void 
 		
 		
 		
