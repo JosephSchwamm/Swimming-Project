@@ -1,17 +1,11 @@
 import java.util.*;
 public class TimeSplitter
 	{
+		static String [] times;
 
-		public static void main(String[] args)
-			{	
-				minutesToSeconds();
-			
-			}
-				public static void minutesToSeconds()
+				public static double minutesToSeconds(String t)
 					{
-					String team = TeamArray.team.get(0).getEvent2Time();
-					
-					String [] times = team.split(":");
+					times = t.split(":");
 					
 					double minutes= Double.parseDouble(times[0]);
 					
@@ -19,7 +13,8 @@ public class TimeSplitter
 					
 					double seconds= Double.parseDouble(times[1]);
 					
-					System.out.println(inSeconds + seconds);
+					return (inSeconds + seconds);
+					
 					}
 				
 				

@@ -4,12 +4,19 @@ public class RaceDriver
 		static int whichSwimmer;
 		static int eventPicked;
 		static String finalEvent;
+		static String baseTime;
+		static String fromEventOne;
+		static String fromEventTwo;
+		static String fromEventThree;
+		static double timeBeforeMods;
 		public static void main(String[] args)
 			{
 				TeamArray.fillTeam();
 				pickYourSwimmer();
 				chooseEvent();
 				showSwimmersInTheEvent();
+				double timeBeforeMods = TimeSplitter.minutesToSeconds(baseTime);
+				sketchySteroids();
 				
 			}
 		
@@ -45,16 +52,20 @@ public class RaceDriver
 				if (eventPicked == 1)
 					{
 						finalEvent = TeamArray.team.get(whichSwimmer-1).getEvent1();
+						baseTime = TeamArray.team.get(whichSwimmer-1).getEvent1Time();
+						
 					}
 				
 				else if (eventPicked == 2)
 					{	
-						finalEvent = TeamArray.team.get(whichSwimmer-1).getEvent2();	
+						finalEvent = TeamArray.team.get(whichSwimmer-1).getEvent2();
+						baseTime = TeamArray.team.get(whichSwimmer-1).getEvent2Time();
 					}
 				
 				else if (eventPicked == 3)
 					{
-						finalEvent = TeamArray.team.get(whichSwimmer-1).getEvent3();	
+						finalEvent = TeamArray.team.get(whichSwimmer-1).getEvent3();
+						baseTime = TeamArray.team.get(whichSwimmer-1).getEvent3Time();
 					}
 		}
 		
@@ -66,31 +77,60 @@ public class RaceDriver
 					if (s.getEvent1().equals(finalEvent))
 						{
 							System.out.println(s.getName());
+							fromEventOne = s.getName();
 							 s.getEvent1Time();
 						}
 					
 					else if (s.getEvent2().equals(finalEvent))
 						{
 							System.out.println(s.getName());
+							fromEventTwo = s.getName();
 							s.getEvent2Time();
 						}
 					
 					else if (s.getEvent3().equals(finalEvent))
 						{
 							System.out.println(s.getName());
+							fromEventThree = s.getName();
 							s.getEvent3Time();
 						}
-				}
+				}	
+		}
+		
+		
+		public static void sketchySteroids()
+		{
+			Scanner userInput = new Scanner(System.in);
+			System.out.println("Would you like to give your swimmer steroids? Yes or No? \n"
+					+ "If you choose yes, there is a 50% chance your swimmer will be 20% faster,\n"
+					+ " there is also a 50% chance they will drown.");
+			String steroidQuestion = userInput.nextLine();	
+			
+				if(steroidQuestion.equalsIgnoreCase("yes"))
+					{
+						System.out.println(timeBeforeMods);
+						double fixingTimes = timeBeforeMods * .2; 
+						double finalTime = timeBeforeMods - fixingTimes;
+						System.out.println("Your swimmer's new time is " + finalTime + ".");
+					}
+			
+				else if (steroidQuestion.equalsIgnoreCase("no"))
+					{
+						System.out.println("Fair player, lets get to the race!");
+					}
+			
+			
+		}
+		
+		public static void racingTime()
+		{
+			
+			
 			
 			
 			
 			
 		}
-		
-		
-		
-		public static void 
-		
 		
 		
 		
